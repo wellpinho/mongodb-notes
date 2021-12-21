@@ -1,3 +1,21 @@
-h1 {
-  color: tomato;
+html,
+body {
+  height: 100%;
+}
+
+#main-container {
+  padding: 30px;
+  max-width: 600px;
+  min-height: 375px;
+}
+
+footer {
+  height: 200px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

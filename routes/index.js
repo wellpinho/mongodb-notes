@@ -8,4 +8,8 @@ routes.get('/', (req, res) => {
   res.render('home')
 })
 
+routes.get('/create', (req, res) => {
+  res.render('create')
+})
+
 module.exports = routes
