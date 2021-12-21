@@ -4,6 +4,7 @@ const {
 } = require('express-handlebars')
 const bodyParser = require('body-parser')
 const routes = require('./routes')
+const db = require('./config/db')
 
 const app = express()
 
@@ -21,4 +22,11 @@ app.use(express.static('./public'))
 
 app.use(routes)
 
-app.listen(4000, () => console.log('Running on port 4000'))
+db.initDb((err, db) => {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log('Banco conectado com sucesso!')
+    app.listen(4000, () => console.log('Running on port 4000'))
+  }
+})
