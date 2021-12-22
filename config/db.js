@@ -1,24 +1,22 @@
 const {
   MongoClient
 } = require('mongodb')
-const url = 'mongodb://localhost:27017/notesdb';
+const url = 'mongodb://localhost:27017/notesdb'
 
 let _db;
 
-const initDb = (callback) => {
+const initDb = cb => {
   MongoClient.connect(url)
     .then(client => {
       _db = client
-      callback(null, _db)
+      cb(null, _db)
     })
     .catch(err => {
-      callback(err)
+      cb(err)
     })
 }
 
-const getDb = () => {
-  return callback()
-}
+const getDb = () => _db
 
 module.exports = {
   initDb,
